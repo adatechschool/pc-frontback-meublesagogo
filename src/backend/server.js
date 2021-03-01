@@ -12,11 +12,13 @@ mongoose
   })
   .catch((error) => console.log(error.reason));
 
-  const db = mongoose.connection;
-  db.on('error', console.error.bind(console, 'connection error:'));
-  db.once('open', function() {
-    console.log("we're connected!");
-  });
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  console.log("we're connected!");
+});
+
+
 
 const app = express();
 
