@@ -27,4 +27,12 @@ router.get('/sample', async (req, res) => {
     }
   });
 
+router.get('/id/:_id',async (req, res) => {
+  const product = await Product.findOne({_id: req.params._id})
+  if (product){
+    res.send(product);
+  }else{
+    res.status(404).send({ message: 'Id is not correspondant' });
+  }
+});
 export default router;
