@@ -1,6 +1,7 @@
 import config from './config.js';
 import mongoose from 'mongoose';
 import express from 'express';
+import cors from 'cors';
 import productRoute from './routes/productRoute.js';
 const port = 5000;
 
@@ -23,6 +24,8 @@ db.once('open', function() {
 
 
 const app = express();
+
+app.use(cors())
 
 app.listen(port, function () {
   console.log("Server is running on "+ port +" port");
