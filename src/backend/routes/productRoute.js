@@ -18,10 +18,10 @@ router.get('/sample', async (req, res) => {
   const sample = [];
   if (products){
     for (let i=0; i<products.length; i++){
-      sample.push([products[i]._id, products[i].name, products[i].price, products[i].category, products[i].img])
+      sample.push({"_id":products[i]._id, "name":products[i].name, "price":products[i].price, "category":products[i].category,"img":products[i].img})
     }
+    console.log(sample)
       res.send(sample);
-      console.log(sample);
   } else {
       res.status(404).send({ message: 'Products not found' });
     }
