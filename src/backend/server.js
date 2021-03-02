@@ -1,7 +1,9 @@
 import config from './config.js';
 import mongoose from 'mongoose';
 import express from 'express';
+import productRoute from './routes/productRoute.js';
 const port = 5000;
+
 
 const mongodbUrl = config.MONGODB_URL;
 mongoose
@@ -25,6 +27,8 @@ const app = express();
 app.listen(port, function () {
   console.log("Server is running on "+ port +" port");
 });
+
+app.use('/api/product', productRoute);
 
 app.get('/', function (req, res) {
   res.send('<h1>Hello World!</h1>')

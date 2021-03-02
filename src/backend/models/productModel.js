@@ -6,15 +6,15 @@ const productSchema = new mongoose.Schema({
   price: { type: Number , required: true },
   img: { type: String, required: true },
   color: {type: String, required: true },
-  description : String,
+  description : {type: String},
   size: {
-    length: Number,
-    height: Number,
-    depth: Number
+    length:{type: Number},
+    height: {type: Number},
+    depth: {type: Number}
   },
-  material: [[String]],
-  inStock: Number,
-  status: String
+  material: [{type:String}],
+  idVendor: {type: String},
+  status: {type: String}
 });
 
 const productModel = mongoose.model('Product', productSchema);
