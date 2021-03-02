@@ -4,7 +4,7 @@ import express from 'express';
 
 const router = express.Router();
 
-router.get('/:category', async (req, res) => {
+router.get('/category/:category', async (req, res) => {
   const product = await Product.find({category: req.params.category});
   if (product) {
     res.send(product);
