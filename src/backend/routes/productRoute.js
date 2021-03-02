@@ -13,4 +13,18 @@ router.get('/category/:category', async (req, res) => {
   }
 });
 
+router.get('/sample', async (req, res) => {
+  const products = await Product.find();
+  const sample = [];
+  if (products){
+    for (let i=0; i<products.length; i++){
+      sample.push([products[i]._id, products[i].name, products[i].price, products[i].category, products[i].img])
+    }
+      res.send(sample);
+      console.log(sample);
+  } else {
+      res.status(404).send({ message: 'Products not found' });
+    }
+  });
+
 export default router;
