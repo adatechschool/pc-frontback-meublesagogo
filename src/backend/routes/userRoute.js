@@ -12,9 +12,21 @@ router.post('/signup', async (req, res) => {
         createUser.save();
     }
     else {
-        res.sendStatus(400);
-        
+        res.sendStatus(400);       
     }
-  })
+})
+
+router.post('/login', async(req, res) => {
+    const findUser = await User.findOne({ email: req.body.email })
+    if(findUser){
+        if (req.body.password == findUser.password){
+            res.status(200).send({message :"autorisation de se connecter :)"});
+        } else {
+            res.status(401).send({message :"Mauvais mot de passe :(!"});
+        }
+    } else {
+        res.status(401).json({ error: 'Utilisateur non trouvé !' });
+    }
+})
 
 export default router;
