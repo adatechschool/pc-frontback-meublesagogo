@@ -4,6 +4,7 @@ import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import productRoute from './routes/productRoute.js';
+import userRoute from './routes/userRoute.js';
 const port = 5000;
 
 
@@ -34,7 +35,9 @@ app.listen(port, function () {
 });
 
 app.use('/api/product', productRoute);
-
+app.use('/api/user', userRoute);
 app.get('/', function (req, res) {
   res.send('<h1>Hello World!</h1>')
 })
+
+

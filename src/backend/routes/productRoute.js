@@ -42,8 +42,12 @@ router.get('/id/:_id',async (req, res) => {
 router.post('/',  async (req, res) => {
   const createProduct = await new Product({...req.body})
   if(createProduct){
+    console.log(createProduct)
     res.sendStatus(200);
     createProduct.save();
+  }
+  else{
+    res.status(400).send({ message: 'Les paramètres ne sont pas valides' });
   }
 
 
