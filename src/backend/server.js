@@ -2,6 +2,7 @@ import config from './config.js';
 import mongoose from 'mongoose';
 import express from 'express';
 import cors from 'cors';
+import bodyParser from 'body-parser';
 import productRoute from './routes/productRoute.js';
 const port = 5000;
 
@@ -24,7 +25,8 @@ db.once('open', function() {
 
 
 const app = express();
-
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true}))
 app.use(cors())
 
 app.listen(port, function () {

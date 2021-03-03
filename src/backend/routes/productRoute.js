@@ -1,5 +1,6 @@
 import Product from '../models/productModel.js';
 import express from 'express';
+import bodyParser from 'body-parser';
 
 
 const router = express.Router();
@@ -35,4 +36,17 @@ router.get('/id/:_id',async (req, res) => {
     res.status(404).send({ message: 'Id is not correspondant' });
   }
 });
+
+
+
+router.post('/',  async (req, res) => {
+  const createProduct = await new Product({...req.body})
+  if(createProduct){
+    res.sendStatus(200);
+    createProduct.save();
+  }
+
+
+})
+
 export default router;
