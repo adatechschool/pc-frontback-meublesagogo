@@ -4,6 +4,7 @@ import bodyParser from 'body-parser';
 import bcrypt from 'bcrypt';
 
 
+
 const router = express.Router();
 
 router.post('/signup', async (req, res) => {
@@ -28,7 +29,11 @@ router.post('/login', async(req, res) => {
         if (await bcrypt.compare(req.body.password, findUser.password)== true){
             res.status(200).json({
                 userId: findUser._id,
-                token:"TOKEN"
+                token:jwt.sign(
+                { userId: user._id },
+                "RANDOM_TOKEN_SECRET",
+                { expiresIn: "24h" }
+                )
             });
         } else {
             res.status(401).send({message :"Mauvais mot de passe :(!"});

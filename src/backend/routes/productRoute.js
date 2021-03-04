@@ -1,11 +1,11 @@
 import Product from '../models/productModel.js';
 import express from 'express';
 import bodyParser from 'body-parser';
-
+import auth from '../middleware/auth.js';
 
 const router = express.Router();
 
-router.get('/category/:category', async (req, res) => {
+router.get('/category/:category',auth, async (req, res) => {
   const product = await Product.find({category: req.params.category});
   if (product) {
     res.send(product);
@@ -28,7 +28,7 @@ router.get('/sample', async (req, res) => {
     }
   });
 
-router.get('/id/:_id',async (req, res) => {
+router.get('/id/:_id', auth, async (req, res) => {
   const product = await Product.findOne({_id: req.params._id})
   if (product){
     res.send(product);
@@ -39,7 +39,7 @@ router.get('/id/:_id',async (req, res) => {
 
 
 
-router.post('/',  async (req, res) => {
+router.post('/', auth,  async (req, res) => {
   const createProduct = await new Product({...req.body})
   if(createProduct){
     console.log(createProduct)
