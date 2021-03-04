@@ -13,7 +13,7 @@ const productSchema = new mongoose.Schema({
     depth: {type: Number}
   },
   material: [{type:String}],
-  idVendor: {type: String},
+  idVendor: {type: Object, required: true},
   status: {type: String}
 });
 

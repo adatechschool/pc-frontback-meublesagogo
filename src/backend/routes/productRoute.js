@@ -51,4 +51,12 @@ router.post('/', auth,  async (req, res) => {
   }
 })
 
+router.put('/id/:_id', async (req, res, next) => {
+  
+  const modifyProduct = await Product.findOne({_id: req.params._id})
+  Thing.updateOne({ _id: req.params._id }, { ...req.body, _id: req.params._id })
+    .then(() => res.status(200).json({ message: 'Objet modifié !'}))
+    .catch(error => res.status(400).json({ error }));
+});
+
 export default router;
