@@ -3,15 +3,15 @@
 *Ce fichier est destiné à recevoir un récapitulatif de ce que vous avez fait pendant la journée avec votre équipe. Vous êtes libres d'organiser le bilan de vos journées comme bon vous semble (ex : fait aujourd'hui - plans pour demain - blocages)*
 
 Lundi 1er mars:
--Découverte du projet et de bootstrap
--Brainstorming dans un fichier partagé sur Notion
--Découpage des différentes pages à réaliser
--Structure de la page principale et de la navbar en mob-programming
--Despriptif et formulation des données nécessaires à la communication back/front
+- Découverte du projet et de bootstrap
+- Brainstorming dans un fichier partagé sur Notion
+- Découpage des différentes pages à réaliser
+- Structure de la page principale et de la navbar en mob-programming
+- Despriptif et formulation des données nécessaires à la communication back/front
 
 Mardi 2 mars;
--Finalisation de la page principale en équipe
--Recherches sur les requêtes ajax
+- Finalisation de la page principale en équipe
+- Recherches sur les requêtes ajax
 
 Mercredi 3 mars:
  - Revue de code
