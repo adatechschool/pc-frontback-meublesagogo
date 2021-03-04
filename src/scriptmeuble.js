@@ -28,13 +28,11 @@ $(document).ready(() => {
       $("#material").append(material);
       $("#color").append(color);
       $("#price").append(price);
+
+      // TODO : faire une boucle pour afficher les différentes images quand la base de données sera fournie
       $("#firstimage").attr('src',`${image}`);
       $("#secondimage").attr('src',`${image}`);
       $("#thirdimage").attr('src',`${image}`);
-
-
-
-
     })
     // Code to run if the request fails; the raw request and
     // status codes are passed to the function
@@ -49,4 +47,3 @@ $(document).ready(() => {
       console.log("The request is complete!");
     });
 });
-
