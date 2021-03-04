@@ -2,7 +2,7 @@ import User from '../models/userModel.js';
 import express from 'express';
 import bodyParser from 'body-parser';
 import bcrypt from 'bcrypt';
-
+import jwt from 'jsonwebtoken';
 
 
 const router = express.Router();
@@ -19,7 +19,7 @@ router.post('/signup', async (req, res) => {
         createUser.save();
     }
     else {
-        res.sendStatus(400);       
+        res.sendStatus(400);
     }
 })
 
@@ -30,7 +30,7 @@ router.post('/login', async(req, res) => {
             res.status(200).json({
                 userId: findUser._id,
                 token:jwt.sign(
-                { userId: user._id },
+                { userId: findUser._id },
                 "RANDOM_TOKEN_SECRET",
                 { expiresIn: "24h" }
                 )
