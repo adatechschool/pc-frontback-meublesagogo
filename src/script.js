@@ -20,7 +20,7 @@ $(document).ready(function () {
     //  $("<h5>").text(json.name).appendTo("body");
     .done(function(response){
       response.forEach( function(element){
-        let card = `<div id="card" class="col">
+        let card = `<a href="meubledetail.html?id=${element._id}"><div id="card" class="col">
           <div class="card mb-4 mx-auto" style="max-width: 540px;">
             <div class="row g-0">
               <div class="col-md-4">
@@ -36,7 +36,7 @@ $(document).ready(function () {
               </div>
             </div>
           </div>
-        </div>`
+        </div></a>`
 
 
           $(card).appendTo($("#card-container"));
@@ -62,6 +62,6 @@ $(document).ready(function () {
     })
     // Code to run regardless of success or failure;
     .always(function (xhr, status) {
-      alert("The request is complete!");
+      console.log("The request is complete!");
     });
 });

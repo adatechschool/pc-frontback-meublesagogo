@@ -1,8 +1,12 @@
 $(document).ready(() => {
+  let searchParams = new URLSearchParams(window.location.search);
+  let id = "";
+  if (searchParams.has('id')) {
+    id = searchParams.get('id');
+  }
   $.ajax({
-
     // The URL for the request
-    url: "http://192.168.7.115:5000/api/product/id/603e027c307535a76ae0c769",
+    url: "http://192.168.7.115:5000/api/product/id/"+id,
 
     // Whether this is a POST or GET request
     type: "GET",
@@ -13,15 +17,20 @@ $(document).ready(() => {
     // Code to run if the request succeeds (is done);
     // The response is passed to the function
     .done(response => {
-      let title = "Type de meuble : "+ response.name;
-      $("#title").append(title);
-      $("#type").append(response.category);
-      $("#material").append(response.material);
-      $("#color").append(response.color);
-      $("#price").append(response.price + "€");
-      $("#firstimage").append(response.img);
-      $("#secondimage").append(response.img);
-      $("#thirdimage").append(response.img);
+      let image = response.img;
+      let type = "Type de meuble : "+ response.category;
+      let material = "Matières du meuble : "+ response.material;
+      let color = "Couleurs du meuble : "+ response.color;
+      let price = "Prix : "+ response.price + " €";
+
+      $("#title").append(response.name);
+      $("#type").append(type);
+      $("#material").append(material);
+      $("#color").append(color);
+      $("#price").append(price);
+      $("#firstimage").attr('src',`${image}`);
+      $("#secondimage").attr('src',`${image}`);
+      $("#thirdimage").attr('src',`${image}`);
 
 
 
@@ -37,7 +46,7 @@ $(document).ready(() => {
     })
     // Code to run regardless of success or failure;
     .always((xhr, status) => {
-      alert("The request is complete!");
+      console.log("The request is complete!");
     });
 });
 
