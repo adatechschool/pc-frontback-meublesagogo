@@ -49,8 +49,6 @@ router.post('/', auth,  async (req, res) => {
   else{
     res.status(400).send({ message: 'Les paramètres ne sont pas valides' });
   }
-
-
 })
 
 export default router;
