@@ -1,5 +1,6 @@
 # Journal du projet
 
+<<<<<<< HEAD
 *Ce fichier est destiné à recevoir un récapitulatif de ce que vous avez fait pendant la journée avec votre équipe. Vous êtes libres d'organiser le bilan de vos journées comme bon vous semble (ex : fait aujourd'hui - plans pour demain - blocages)*
 
 Lundi 1er mars:
@@ -29,3 +30,23 @@ jeudi 4 mars :
 - Revue de code de chaque groupe/page
 - Mise en commun et nettoyage du code
 - création d'issues pour informer l'autre équipe de ce qu'il reste à faire
+=======
+# lundi 
+- Création d'une branche backend
+- Installation MongoDB, Express, Mongoose
+
+# mardi 
+- Tuto openclassroom 
+- Création des premières routes: route sample + route id
+- Cors
+
+# mercredi
+- Login et signup
+- Début sécurité password
+
+# jeudi
+- Autentification TOKEN
+- Maj des routes pour qu'elles prennent en compte l'authentification
+- Création route PUT pour les meubles avec Auth et Token
+
+>>>>>>> 5f86abb8025cf5a833b5637f2bf534e082b3f745
