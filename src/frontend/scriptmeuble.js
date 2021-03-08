@@ -1,3 +1,5 @@
+let ipAdress = "192.168.1.31"
+
 $(document).ready(() => {
   let searchParams = new URLSearchParams(window.location.search);
   let id = "";
@@ -6,7 +8,7 @@ $(document).ready(() => {
   }
   $.ajax({
     // The URL for the request
-    url: "http://192.168.7.115:5000/api/product/id/"+id,
+    url: "http://"+ipAdress+":5000/api/product/id/"+id,
 
     // Whether this is a POST or GET request
     type: "GET",

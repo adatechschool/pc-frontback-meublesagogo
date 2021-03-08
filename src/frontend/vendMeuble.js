@@ -1,13 +1,14 @@
+let ipAdress = "192.168.1.31"
 // Using the core $.ajax() method
 $(document).ready(function () {
     $.ajax({
-  
+
       // The URL for the request
-      url: "http://192.168.7.115:5000/api/product/sample",
-  
+      url: "http://"+ipAdress+":5000/api/product/sample",
+
       // Whether this is a POST or GET request
       type: "POST",
-  
+
       // The type of data we expect back
       dataType: "json",
     })
@@ -16,7 +17,7 @@ $(document).ready(function () {
 
       .done(function(response){
         response.forEach( function(element){
-        
+
         })
       })
       // Code to run if the request fails; the raw request and

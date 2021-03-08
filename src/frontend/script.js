@@ -1,22 +1,23 @@
 
 // Using the core $.ajax() method
 let token = ""
+let ipAdress = "192.168.1.31"
 
 $(document).ready(function () {
   $.ajax({
 
     // The URL for the request
-    url: "http://192.168.7.115:5000/api/product/sample",
+    url: "http://"+ipAdress+":5000/api/product/sample",
 
     // Whether this is a POST or GET request
     type: "GET",
 
     // The type of data we expect back
     dataType: "json",
-    
+
     // TODO : set header with the right authorization token
-    headers: {"Authorization" : `Bearer ${token}`}
-    
+  //headers: {"Authorization" : `Bearer ${token}`}
+
   })
     // Code to run if the request succeeds (is done);
     // The response is passed to the function
