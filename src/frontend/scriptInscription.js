@@ -7,7 +7,7 @@ $(document).ready(() => {
     //id = searchParams.get('id');
 //  }
 
-$("#submit").click(function{
+$("#submit").click(function(){
   $.ajax({
     // The URL for the request
     url: "http://"+ipAdress+":5000/api/user/signup",
@@ -17,6 +17,7 @@ $("#submit").click(function{
 
     // The type of data we expect back
     dataType: "json",
-    data: "name="+$("#name"),"email"+$("#email"),"password"+$("#password"),"text"
+    data: "name="+$("#name")+"&email="+$("#email")+"&password="+$("#password")
   })
-  }
+  })
+  })
