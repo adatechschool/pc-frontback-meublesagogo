@@ -40,7 +40,9 @@
     </div>
 </nav>
 <h1 class="text-center mt-5 py-1" style="font-family: 'Montserrat', sans-serif; font-size: 3em;">Inscription</h1>
-<form class="mx-auto pt-5" style="width: 400px;" action="http://192.168.7.115:5000/api/user/signup" method="POST">
+<!-- <form class="mx-auto pt-5" style="width: 400px;" action="http://192.168.7.115:5000/api/user/signup" method="POST"> -->
+
+<form class="mx-auto pt-5" style="width: 400px;">
     <div class="form-row">
         <div class="form-group">
             <label for="name" class="py-3">Pseudonyme</label>
@@ -64,8 +66,9 @@
       </div>
     </div>
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-    <button type="submit" class="btn btn-primary py-3 col-6 mx-auto">Soumettre</button> 
+    <button type="submit" id="submit" class="btn btn-primary py-3 col-6 mx-auto">Soumettre</button>
     </div>
 </form>
+<script src="scriptInscription.js" type="text/javascript"></script>
 </body>
 </html>

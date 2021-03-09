@@ -1,4 +1,4 @@
-let ipAdress = "192.168.1.31"
+let ipAdress = "192.168.1.14."
 
 $(document).ready(() => {
   let searchParams = new URLSearchParams(window.location.search);
