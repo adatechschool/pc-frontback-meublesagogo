@@ -1,21 +1,20 @@
 let ipAdress = "192.168.1.31."
+let url = "http://"+ipAdress+":5000/api/user/signup"
 
-$(document).ready(() => {
 
-  $("#submit").click(function(){
-    if ($("#gridCheck").val() == true){
-    $.ajax({
-    // The URL for the request
-      url: "http://"+ipAdress+":5000/api/user/signup",
-
-    // Whether this is a POST or GET request
-      type: "POST",
-
-    // The type of data we expect back
-      dataType: "json",
-      data: "name="+$("#name").val()+"&email="+$("#email").val()+"&password="+$("#password").val()
-
-    })
-  }
-  })
+submit.addEventListener('click', async () => {
+  // Default options are marked with *
+  const response = await fetch("http://192.168.1.31:5000/api/user/signup", {
+    method: 'POST', // *GET, POST, PUT, DELETE, etc.
+    headers: {
+      'Content-Type': 'application/json'
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+    },
+   body: JSON.stringify({ name: $("#name").val(),
+   email: $("#email").val(),
+   password: $("#password").val()}) // body data type must match "Content-Type" header
+  }).then(() => {
+      console.log("coucou"); // JSON data parsed by `data.json()` call
+    });
+//  return response.json(); // parses JSON response into native JavaScript objects
 })
