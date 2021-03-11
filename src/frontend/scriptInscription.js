@@ -1,6 +1,5 @@
-let ipAdress = "192.168.1.31."
+let ipAdress = "192.168.1.31"
 let url = "http://"+ipAdress+":5000/api/user/signup"
-
 
 submit.addEventListener('click', async () => {
   // Default options are marked with *
@@ -14,7 +13,9 @@ submit.addEventListener('click', async () => {
    email: $("#email").val(),
    password: $("#password").val()}) // body data type must match "Content-Type" header
   }).then(() => {
-      console.log("coucou"); // JSON data parsed by `data.json()` call
+
+      alert('Vous êtes bien enregistré !')
+      window.location.replace("./connexion.html")// JSON data parsed by `data.json()` call
     });
 //  return response.json(); // parses JSON response into native JavaScript objects
 })

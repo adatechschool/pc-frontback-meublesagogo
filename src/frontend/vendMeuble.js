@@ -1,35 +1,45 @@
 let ipAdress = "192.168.1.31"
-// Using the core $.ajax() method
-$(document).ready(function () {
-    $.ajax({
 
-      // The URL for the request
-      url: "http://"+ipAdress+":5000/api/product/sample",
+const cookie_userId =  document.cookie
+  .split('; ')
+  .find(row => row.startsWith('userId='))
+  .split('=')[1];
 
-      // Whether this is a POST or GET request
-      type: "POST",
+const cookie_token =  document.cookie
+  .split('; ')
+  .find(row => row.startsWith('token='))
+  .split('=')[1];
 
-      // The type of data we expect back
-      dataType: "json",
-    })
-      // Code to run if the request succeeds (is done);
-      // The response is passed to the function
 
-      .done(function(response){
-        response.forEach( function(element){
+submit.addEventListener('click', () => {
 
-        })
-      })
-      // Code to run if the request fails; the raw request and
-      // status codes are passed to the function
-      .fail(function (xhr, status, errorThrown) {
-        alert("Sorry, there was a problem!");
-        console.log("Error: " + errorThrown);
-        console.log("Status: " + status);
-        console.dir(xhr);
-      })
-      // Code to run regardless of success or failure;
-      .always(function (xhr, status) {
-        console.log("The request is complete!");
-      });
+  const response = fetch("http://192.168.1.31:5000/api/product", {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'authorization': "Bearer "+cookie_token ,
+    },
+   body: JSON.stringify({
+
+     name: $("#name").val(),
+     category: $("#category").val(),
+     description: $("#description").val(),
+     color: $("#color").val(),
+     img: $("#img").val(),
+     price : $("#price").val(),
+     size: {
+       length: $("#length").val(),
+       height: $("#height").val(),
+       depth: $("#depth").val()
+     },
+     material: $("#material").val().split(" "),
+     idVendor: cookie_userId
+
+   })
+  }).then(() => {
+      console.log("coucou meuble");
+      alert('Meuble bien enregistré !')
+      window.location.replace("./listeMeubles.html")
+
+    });
   });

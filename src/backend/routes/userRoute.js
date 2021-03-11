@@ -28,6 +28,7 @@ router.post('/login', async(req, res) => {
     if(findUser){
         if (await bcrypt.compare(req.body.password, findUser.password)== true){
             res.status(200).json({
+                username: findUser.name,
                 userId: findUser._id,
                 token:jwt.sign(
                 { userId: findUser._id },
