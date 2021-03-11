@@ -28,10 +28,3 @@ submit.addEventListener('click', () => {
   //  const token = response.json().token // parses JSON response into native JavaScript objects
 
 })
-
-document.getElementById("logout").addEventListener('click', () => {
-  document.cookie = "username=";
-  document.cookie ="userId=";
-  document.cookie ="token=";
-  window.location.replace("./listeMeubles.html")
-})

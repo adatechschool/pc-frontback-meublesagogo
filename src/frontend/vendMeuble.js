@@ -1,14 +1,5 @@
 let ipAdress = "192.168.1.31"
 
-const cookie_userId =  document.cookie
-  .split('; ')
-  .find(row => row.startsWith('userId='))
-  .split('=')[1];
-
-const cookie_token =  document.cookie
-  .split('; ')
-  .find(row => row.startsWith('token='))
-  .split('=')[1];
 
 
 submit.addEventListener('click', () => {

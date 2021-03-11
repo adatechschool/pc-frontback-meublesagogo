@@ -30,7 +30,7 @@
                         <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
                     </svg>
                 </a>
-                <a class="nav-link px-4" href="espaceperso.html">
+                <a class="nav-link px-4" href="connexion.html">
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white"
                         class="bi bi-person-fill" viewBox="0 0 16 16">
                         <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
@@ -41,17 +41,32 @@
     </div>
 </nav>
 
-<h1 class="text-center my-5 py-5" style="font-family: 'Montserrat', sans-serif; font-size: 3em;">Anciens meubles pour
-    une nouvelle vie</h1>
+<h1> Bienvenue <span id="username"></span></h1>
 
-<div class="row row-cols-1 row-cols-md-2 g-4 mx-5 " id="card-container"></div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end pt-5">
+  <a href="vendMeuble.html" class="btn btn-primary py-3 col-6 mx-auto">Vendre un objet</a>
+</div>
+
+<div class="d-grid gap-2 d-md-flex justify-content-md-end pt-5">
+  <button type ="button" class="btn btn-primary py-3 col-6 mx-auto" id='panier'>Votre Panier</button>
+</div>
+
+<div class="d-grid gap-2 d-md-flex justify-content-md-end pt-5">
+  <button type ="button" class="btn btn-primary py-3 col-6 mx-auto" id='annonce'>Vos Annonces</button>
+</div>
+
+<div class="d-grid gap-2 d-md-flex justify-content-md-end pt-5">
+  <button type ="button" class="btn btn-primary py-3 col-6 mx-auto" id='logout'>Se deconnecter</button>
+</div>
+
+
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
         crossorigin="anonymous"></script>
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script type="text/javascript" src="script.js"></script>
 
+<script type="text/javascript" src="main.js"></script>
 </body>
 </html>
