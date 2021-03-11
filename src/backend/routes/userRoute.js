@@ -1,13 +1,14 @@
-import User from '../models/userModel.js';
 import express from 'express';
-import bodyParser from 'body-parser';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
+
+import User from '../models/userModel.js';
 
 
 const router = express.Router();
 
-router.post('/signup', async (req, res) => {
+router
+  .post('/signup', async (req, res) => {
     const hash = await bcrypt.hash(req.body.password, 10);
     const createUser = await new User({
         name: req.body.name,
@@ -22,8 +23,7 @@ router.post('/signup', async (req, res) => {
         res.sendStatus(400);
     }
 })
-
-router.post('/login', async(req, res) => {
+  .post('/login', async(req, res) => {
     const findUser = await User.findOne({ email: req.body.email })
     if(findUser){
         if (await bcrypt.compare(req.body.password, findUser.password)== true){
