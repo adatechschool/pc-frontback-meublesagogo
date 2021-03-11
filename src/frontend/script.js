@@ -1,7 +1,7 @@
 
 // Using the core $.ajax() method
 let token = ""
-let ipAdress = "192.168.1.31"
+let ipAdress = "192.168.1.89"
 
 $(document).ready(function () {
   $.ajax({
