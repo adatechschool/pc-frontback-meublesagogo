@@ -1,10 +1,10 @@
 let ipAdress = "192.168.1.31"
 
+let id = "";
 
 
 $(document).ready(() => {
   let searchParams = new URLSearchParams(window.location.search);
-  let id = "";
   if (searchParams.has('id')) {
     id = searchParams.get('id');
   }
@@ -63,4 +63,21 @@ const btnCart = document.getElementById('addCart')
 
 btnCart.addEventListener('click', () => {
 
-})
+  const response = fetch("http://192.168.1.31:5000/api/cart/add", {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'authorization': "Bearer "+cookie_token ,
+    },
+   body: JSON.stringify({
+
+     idUser: cookie_userId,
+     idProduct: id
+   })
+  }).then(() => {
+      console.log("hello");
+      //alert('Meuble bien enregistré !')
+      //window.location.replace("./index.html")
+
+    });
+  });
