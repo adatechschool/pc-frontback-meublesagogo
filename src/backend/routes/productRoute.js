@@ -77,4 +77,18 @@ router.put('/id/:_id', auth, async (req, res, next) => {
   }
 });
 
+router.delete('/id/:_id', auth, async (req, res, next) => {
+  const token = req.headers.authorization.split(' ')[1];
+  const decodedToken = jwt.verify(token, 'RANDOM_TOKEN_SECRET');
+  const userId = decodedToken.userId;
+  const delProduct = await Product.findOne({_id: req.params._id});
+  if(delProduct.idVendor == userId){
+      const del = await Product.deleteOne({_id: req.params._id});
+    res.status(200).json({message:"Objet supprimé"});
+  }
+  else {
+    res.status(400).json({message:"Ca marche pas sooorry!" })
+  }
+});
+
 export default router;

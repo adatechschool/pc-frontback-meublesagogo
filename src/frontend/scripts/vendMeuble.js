@@ -24,7 +24,8 @@ submit.addEventListener('click', () => {
        depth: $("#depth").val()
      },
      material: $("#material").val().split(" "),
-     idVendor: cookie_userId
+     idVendor: cookie_userId,
+     status: "online"
 
    })
   }).then(() => {

@@ -1,5 +1,7 @@
 let ipAdress = "192.168.1.31"
 
+
+
 $(document).ready(() => {
   let searchParams = new URLSearchParams(window.location.search);
   let id = "";
@@ -34,7 +36,7 @@ $(document).ready(() => {
       $("#type").append(type);
       $("#material").append(material);
       $("#color").append(color);
-    
+
       $("#size").append(size);
       $("#price").append(price);
 
@@ -56,3 +58,9 @@ $(document).ready(() => {
       console.log("The request is complete!");
     });
 });
+
+const btnCart = document.getElementById('addCart')
+
+btnCart.addEventListener('click', () => {
+
+})

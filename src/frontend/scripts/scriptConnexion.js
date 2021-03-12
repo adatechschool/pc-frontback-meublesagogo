@@ -24,7 +24,7 @@ submit.addEventListener('click', () => {
     document.cookie ="userId="+data.userId+";path=/ ; max-age=3600";
     document.cookie ="token="+data.token+";path=/ ; max-age=3600";
     if (data.token != undefined){
-      if (data.token.length > 15 ) {
+      if (data.token.length != 0 ) {
         window.location.replace("./index.html")
       }
     } else {
