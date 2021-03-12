@@ -15,6 +15,15 @@ router.get('/category/:category', async (req, res) => {
   }
 });
 
+router.get('/idVendor/:idVendor', async (req, res) => {
+  const product = await Product.find({idVendor: req.params.idVendor});
+  if (product) {
+    res.send(product);
+  } else {
+    res.status(404).send({ message: 'Product Not Found.' });
+  }
+});
+
 router.get('/sample', async (req, res) => {
   const products = await Product.find();
   const sample = [];
