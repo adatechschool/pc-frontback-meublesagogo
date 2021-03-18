@@ -1,4 +1,4 @@
-let ipAdress = "192.168.7.115"
+let ipAdress = "localhost"
 
 let id = "";
 
@@ -10,7 +10,7 @@ $(document).ready(() => {
   }
   $.ajax({
     // The URL for the request
-    url: "http://192.168.7.115:5000/api/product/id/"+id,
+    url: "http://"+ipAdress+":5000/api/product/id/"+id,
 
     // Whether this is a POST or GET request
     type: "GET",
@@ -63,7 +63,7 @@ const btnCart = document.getElementById('addCart')
 
 btnCart.addEventListener('click', () => {
 
-  const response = fetch("http://192.168.7.115:5000/api/cart/add", {
+  const response = fetch("http://"+ipAdress+":5000/api/cart/add", {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

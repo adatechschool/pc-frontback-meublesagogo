@@ -1,10 +1,11 @@
+let ipAdress = "localhost"
 let searchParams = new URLSearchParams(window.location.search);
 let id = "";
 if (searchParams.has('id')) {
   id = searchParams.get('id');
 }
 
-const response = fetch("http://192.168.7.115:5000/api/product/id/"+id, {
+const response = fetch("http://"+ipAdress+":5000/api/product/id/"+id, {
     method: 'GET', // *GET, POST, PUT, DELETE, etc.
     headers: {
       'Content-Type': 'application/json'
@@ -28,7 +29,7 @@ const response = fetch("http://192.168.7.115:5000/api/product/id/"+id, {
 
   submit.addEventListener('click', () => {
 
-const put = fetch("http://192.168.7.115:5000/api/product/id/"+id, {
+const put = fetch("http://"+ipAdress+":5000/api/product/id/"+id, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',

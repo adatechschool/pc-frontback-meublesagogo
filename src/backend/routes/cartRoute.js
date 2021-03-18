@@ -28,4 +28,26 @@ router.get('/idUser/:idUser', auth, async (req, res) => {
   } 
 })
 
+router.delete('/id/:element', auth, async (req, res, next) => {
+  const token = req.headers.authorization.split(' ')[1];
+  const decodedToken = jwt.verify(token, 'RANDOM_TOKEN_SECRET');
+  const idUserReq = decodedToken.userId;
+  const delCartItem = await Cart.findOne({idUser: idUserReq});
+  const elementArray = delCartItem.idProduct;
+  const element = req.params.element
+  for (let i = 0; i<elementArray.length; i++) {
+    if (elementArray[i] == element) {
+      elementArray.splice(i,i)
+      console.log("elementArry =" + elementArray[i]);
+      console.log(element);
+    }
+
+  }
+  console.log(elementArray);
+    //res.status(200).json({message:"Objet supprimé"});
+  // else {
+  //   res.status(400).json({message:"Ca marche pas sooorry!" })
+  // }
+});
+
 export default router;

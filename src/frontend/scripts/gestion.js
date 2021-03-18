@@ -1,5 +1,5 @@
 
-let ipAdress = "192.168.7.115"
+let ipAdress = "localhost"
 let url = "http://"+ipAdress+":5000/api/product/idVendor/:idVendor"
 let idVendor_cookie = document.cookie
   .split('; ')
@@ -13,7 +13,7 @@ let idVendor_cookie = document.cookie
 
 
 const supprimerMeuble = id => {
-  const supp = fetch("http://192.168.7.115:5000/api/product/id/"+id, {
+  const supp = fetch("http://"+ipAdress+":5000/api/product/id/"+id, {
       method: 'DELETE', // GET, POST, PUT, DELETE, etc.
       headers: {
         'Content-Type': 'application/json',
@@ -25,7 +25,7 @@ const supprimerMeuble = id => {
   })
 }
 
-const response = fetch("http://192.168.7.115:5000/api/product/idVendor/"+idVendor_cookie, {
+const response = fetch("http://"+ipAdress+":5000/api/product/idVendor/"+idVendor_cookie, {
     method: 'GET', // *GET, POST, PUT, DELETE, etc.
     headers: {
       'Content-Type': 'application/json'

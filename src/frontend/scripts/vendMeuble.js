@@ -1,10 +1,10 @@
-let ipAdress = "192.168.7.115"
+let ipAdress = "localhost"
 
 
 
 submit.addEventListener('click', () => {
 
-  const response = fetch("http://192.168.7.115:5000/api/product", {
+  const response = fetch("http://"+ipAdress+":5000/api/product", {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
