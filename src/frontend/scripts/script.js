@@ -1,7 +1,7 @@
 
 // Using the core $.ajax() method
 let token = ""
-let ipAdress = "192.168.1.31"
+let ipAdress = "192.168.7.115"
 
 $(document).ready(function () {
   $.ajax({
@@ -22,6 +22,7 @@ $(document).ready(function () {
     // Code to run if the request succeeds (is done);
     // The response is passed to the function
     .done(function(response){
+      console.log(response)
       response.forEach( function(element){
         let card = `<a href="meubledetail.html?id=${element._id}" style = "text-decoration : none;"><div id="card" class="col text-dark">
           <div class="card mb-4 mx-auto" style="max-width: 540px;">

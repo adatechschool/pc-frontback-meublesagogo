@@ -4,7 +4,7 @@ if (searchParams.has('id')) {
   id = searchParams.get('id');
 }
 
-const response = fetch("http://192.168.1.31:5000/api/product/id/"+id, {
+const response = fetch("http://192.168.7.115:5000/api/product/id/"+id, {
     method: 'GET', // *GET, POST, PUT, DELETE, etc.
     headers: {
       'Content-Type': 'application/json'
@@ -28,7 +28,7 @@ const response = fetch("http://192.168.1.31:5000/api/product/id/"+id, {
 
   submit.addEventListener('click', () => {
 
-const put = fetch("http://192.168.1.31:5000/api/product/id/"+id, {
+const put = fetch("http://192.168.7.115:5000/api/product/id/"+id, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
