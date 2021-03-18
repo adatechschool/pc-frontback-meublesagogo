@@ -15,6 +15,15 @@ router.get('/category/:category', async (req, res) => {
   }
 });
 
+router.get('/idVendor/:idVendor', async (req, res) => {
+  const product = await Product.find({idVendor: req.params.idVendor});
+  if (product) {
+    res.send(product);
+  } else {
+    res.status(404).send({ message: 'Product Not Found.' });
+  }
+});
+
 router.get('/sample', async (req, res) => {
   const products = await Product.find();
   const sample = [];
@@ -62,6 +71,20 @@ router.put('/id/:_id', auth, async (req, res, next) => {
     const modifyProduct = await Product.findOneAndUpdate({_id: req.params._id},{...req.body});
     console.log(modifyProduct);
     res.status(200).json({message:"Objet modifié"});
+  }
+  else {
+    res.status(400).json({message:"Ca marche pas sooorry!" })
+  }
+});
+
+router.delete('/id/:_id', auth, async (req, res, next) => {
+  const token = req.headers.authorization.split(' ')[1];
+  const decodedToken = jwt.verify(token, 'RANDOM_TOKEN_SECRET');
+  const userId = decodedToken.userId;
+  const delProduct = await Product.findOne({_id: req.params._id});
+  if(delProduct.idVendor == userId){
+      const del = await Product.deleteOne({_id: req.params._id});
+    res.status(200).json({message:"Objet supprimé"});
   }
   else {
     res.status(400).json({message:"Ca marche pas sooorry!" })

@@ -9,14 +9,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel=“preconnect” href=“https://fonts.gstatic.com”>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
     <title>AMPUNV</title>
     <style>
         body{
             font-family: 'Montserrat', sans-serif;
-        }
-        .carousel-item img {
-            height: 350px;
         }
     </style>
 </head>
@@ -24,12 +21,8 @@
 <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #919191;">
     <div class="container-fluid">
         <a class="navbar-brand px-4" href="index.html"><img src="AMPUNV.png" width="70%"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-
-        </button>
         <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNavAltMarkup">
+            <a class="navbar-brand px-4" href="vendMeuble.html"><button width="70%">Vendre</button></a>
             <div class="navbar-nav">
                 <a class="nav-link px-4" href="#">
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-cart3"
@@ -48,44 +41,8 @@
     </div>
 </nav>
 
-<div class="card mx-auto col-8 my-4" >
-    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active ">
-                <img src="" class="d-block mx-auto" alt="..." id="firstimage">
-            </div>
-            <div class="carousel-item">
-                <img src="" class="d-block mx-auto" alt="..." id="secondimage">
-            </div>
-            <div class="carousel-item">
-                <img src="" class="d-block mx-auto" alt="..." id="thirdimage" >
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"  data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"  data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
-    <div class="card-body row">
-        <h5 class="card-title text-center my-5" id="title" style="font-size: 2em; font-weight: bold;" ></h5>
-        <div class = "col-9" style="font-size: 1.5em;">
-            <p class="card-text" id="type"></p>
-            <p class="card-text" id ="material"></p>
-            <p class="card-text" id ="color"></p>
-            <p class="card-text" id ="price"></p>
-            <p class="card-text" id ="size"></p>
-        </div>
-        <div class = "col-3 d-flex ">
-          <div class="d-grid gap-2">
-            <button id="addCart" class="btn btn-info ">Ajouter au panier</button>
-          </div>
-        </div>
-    </div>
-</div>
+<h1 class="text-center my-5 py-5" style="font-family: 'Montserrat', sans-serif; font-size: 3em;">Anciens meubles pour
+    une nouvelle vie</h1>
 
 <div class="row row-cols-1 row-cols-md-2 g-4 mx-5 " id="card-container"></div>
 
@@ -94,7 +51,7 @@
         crossorigin="anonymous"></script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script type="text/javascript" src="scripts/scriptmeuble.js"></script>
-<script type="text/javascript" src="scripts/main.js"></script>
+<script type="text/javascript" src="scripts/script.js"></script>
+
 </body>
 </html>
